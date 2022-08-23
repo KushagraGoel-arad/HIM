@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Student Login",
+                  "Teachers Login",
                   style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
                 ),
                 Text(
