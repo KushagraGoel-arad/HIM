@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+class Teacher_LoginPage extends StatefulWidget {
+  Teacher_LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<Teacher_LoginPage> createState() => _Teacher_LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _Teacher_LoginPageState extends State<Teacher_LoginPage> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
             height: h * 0.45,
             decoration: BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('images/loginImage1.jpeg'),
+              image: AssetImage('images/teacher_loginImage1.jpg'),
               //fit: BoxFit.cover
             )),
           ),

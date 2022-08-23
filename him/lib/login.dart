@@ -135,6 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                 'Login',
               ),
               onPressed: () {
+                Navigator.pushNamed(context, '/second');
                 print("Hi User");
               },
               style: ElevatedButton.styleFrom(

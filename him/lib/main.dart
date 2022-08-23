@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:him/login.dart';
+import 'package:him/teacher_login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Happiness Index Meter',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: LoginPage(),
+      // home: LoginPage(),
+      // Teacher_LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginPage(),
+        '/second': (context) => Teacher_LoginPage(),
+      },
     );
   }
 }
-
-class HexColor {}
