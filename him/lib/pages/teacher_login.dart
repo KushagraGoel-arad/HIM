@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:him/utilities/routes.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+class Teacher_LoginPage extends StatefulWidget {
+  Teacher_LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<Teacher_LoginPage> createState() => _Teacher_LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _Teacher_LoginPageState extends State<Teacher_LoginPage> {
+  String name = "";
+  bool changeButton = false;
+  final _formKey = GlobalKey<FormState>();
+
+  moveToHome(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      setState(() {
+        changeButton = true;
+      });
+
+      await Future.delayed(Duration(seconds: 1));
+      await Navigator.pushNamed(context, MyRoutes.Teacher_loginRoute);
+      setState(() {
+        changeButton = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -21,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
             height: h * 0.45,
             decoration: BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('images/loginImage1.jpeg'),
+              image: AssetImage('images/teacher_loginImage1.jpg'),
               //fit: BoxFit.cover
             )),
           ),
@@ -32,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Student Login",
+                  "Teachers Login",
                   style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
                 ),
                 Text(
@@ -43,7 +62,17 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 10,
+                ),
+                Text(
+                  "Welcome $name",
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 35,
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -56,10 +85,9 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.grey.withOpacity(0.3),
                         )
                       ]),
-                  child: TextField(
-                    obscureText: true,
+                  child: TextFormField(
                     decoration: InputDecoration(
-                      labelText: 'LoginID',
+                      hintText: 'Username',
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white, width: 1.0),
                         borderRadius: BorderRadius.circular(30),
@@ -71,6 +99,19 @@ class _LoginPageState extends State<LoginPage> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30)),
                     ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Username cannot be empty";
+                      }
+                      return null;
+                    },
+                    onChanged: (value) {
+                      name = value;
+                      setState(() {
+                        //it will change UI
+                        //it will call build method again only in case of stateful widget.
+                      });
+                    },
                   ),
                 ),
                 SizedBox(
@@ -102,6 +143,15 @@ class _LoginPageState extends State<LoginPage> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30)),
                     ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Password cannot be empty";
+                      }
+                      if (value.length < 6) {
+                        return "Password length should be atleast 6";
+                      }
+                      return null;
+                    },
                   ),
                 ),
                 SizedBox(
@@ -135,25 +185,27 @@ class _LoginPageState extends State<LoginPage> {
                 'Login',
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/second');
+                // Navigator.pushNamed(context, MyRoutes.student_loginRoute);
                 print("Hi User");
               },
               style: ElevatedButton.styleFrom(
-                  primary: Colors.green,
-                  padding: EdgeInsets.only(),
+                  primary: Color.fromARGB(255, 200, 93, 219),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 0.0, horizontal: 32.0),
                   textStyle:
                       TextStyle(fontSize: 27, fontWeight: FontWeight.bold)),
             ),
-            // child: Center(
-            //   child: Text(
-            //         "Sign into your account",
-            //         style: TextStyle(
-            //           fontSize: 15,
-            //           color: Colors.grey[500],
-            //         ),
-            //       ),
-            // ),
           ),
+          SizedBox(
+            height: w * 0.08,
+          ),
+          RichText(
+              text: TextSpan(
+                  text: "Don\'t have an account?",
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 20,
+                  )))
         ],
       ),
     ));
