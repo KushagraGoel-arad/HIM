@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:him/pages/student_login.dart';
-import 'package:him/pages/teacher_login.dart';
+import 'package:him/screens/student_login.dart';
+import 'package:him/screens/teacher_login.dart';
 import 'package:him/utilities/routes.dart';
 
 void main() {

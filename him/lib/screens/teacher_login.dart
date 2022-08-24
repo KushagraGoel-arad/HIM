@@ -37,7 +37,7 @@ class _Teacher_LoginPageState extends State<Teacher_LoginPage> {
         children: [
           Container(
             width: w,
-            height: h * 0.45,
+            height: h * 0.4,
             decoration: BoxDecoration(
                 image: DecorationImage(
               image: AssetImage('images/teacher_loginImage1.jpg'),
@@ -197,7 +197,7 @@ class _Teacher_LoginPageState extends State<Teacher_LoginPage> {
             ),
           ),
           SizedBox(
-            height: w * 0.08,
+            height: w * 0.05,
           ),
           RichText(
               text: TextSpan(
@@ -205,7 +205,16 @@ class _Teacher_LoginPageState extends State<Teacher_LoginPage> {
                   style: TextStyle(
                     color: Colors.grey[500],
                     fontSize: 20,
-                  )))
+                  ),
+                  children: [
+                TextSpan(
+                  text: "Create",
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 20,
+                  ),
+                ),
+              ]))
         ],
       ),
     ));

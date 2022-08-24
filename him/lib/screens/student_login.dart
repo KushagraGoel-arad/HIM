@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Container(
             width: w,
-            height: h * 0.45,
+            height: h * 0.4,
             decoration: BoxDecoration(
                 image: DecorationImage(
               image: AssetImage('images/loginImage1.jpeg'),
@@ -197,15 +197,25 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           SizedBox(
-            height: w * 0.08,
+            height: w * 0.05,
           ),
           RichText(
-              text: TextSpan(
-                  text: "Don\'t have an account?",
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                    fontSize: 20,
-                  ))),
+            text: TextSpan(
+                text: "Don\'t have an account?",
+                style: TextStyle(
+                  color: Colors.grey[500],
+                  fontSize: 20,
+                ),
+                children: [
+                  TextSpan(
+                    text: "Create",
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 20,
+                    ),
+                  ),
+                ]),
+          ),
         ],
       ),
     ));
