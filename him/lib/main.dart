@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:him/screens/homescreen.dart';
 import 'package:him/screens/signUp.dart';
 import 'package:him/screens/student_login.dart';
+import 'package:him/screens/survey.dart';
 import 'package:him/screens/teacher_login.dart';
 import 'package:him/utilities/routes.dart';
 
@@ -21,13 +22,14 @@ class MyApp extends StatelessWidget {
       title: 'Happiness Index Meter',
       theme: ThemeData(primarySwatch: Colors.blue),
       //home: MyBottomNavigationBar(),
-      home: signUp(),
+      home: MySurveyForm(),
       // Teacher_LoginPage(),
       // initialRoute: '/student_login',
       // routes: {
       //   '/': (context) => LoginPage(),
       //   MyRoutes.student_loginRoute: (context) => LoginPage(),
       //   MyRoutes.Teacher_loginRoute: (context) => Teacher_LoginPage(),
+      //   MyRoutes.signUpRoute: (context) => signUp(),
       // },
     );
   }

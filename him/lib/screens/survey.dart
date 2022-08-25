@@ -15,7 +15,8 @@ class MySurveyForm extends StatefulWidget {
 class _MySurveyFormState extends State<MySurveyForm> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(
+    return MaterialApp(
+      home: Scaffold(
         body: Container(
           color: Colors.white,
           child: Align(
@@ -160,14 +161,13 @@ class _MySurveyFormState extends State<MySurveyForm> {
       id: TaskIdentifier(),
       steps: [
         InstructionStep(
-          title: 'Welcome to the\nQuickBird Studios\nHealth Survey',
+          title: 'Welcome to the\nMind Happiness\nSurvey',
           text: 'Get ready for a bunch of super random questions!',
           buttonText: 'Let\'s go!',
         ),
         QuestionStep(
           title: 'How old are you?',
           answerFormat: IntegerAnswerFormat(
-            defaultValue: 25,
             hint: 'Please enter your age',
           ),
           isOptional: true,
@@ -190,8 +190,12 @@ class _MySurveyFormState extends State<MySurveyForm> {
             validationRegEx: "^(?!\s*\$).+",
           ),
         ),
+
+        //Satisfaction Type questions
+
         QuestionStep(
-          title: 'Select your body type',
+          title: '\nLife Satisfaction\n',
+          text: 'Are you satisfied with your daily performance?',
           answerFormat: ScaleAnswerFormat(
             step: 1,
             minimumValue: 1,
@@ -202,15 +206,124 @@ class _MySurveyFormState extends State<MySurveyForm> {
           ),
         ),
         QuestionStep(
-          title: 'Known allergies',
-          text: 'Do you have any allergies that we should be aware of?',
+          title: '\nLife Satisfaction\n',
+          text: 'How happy did you feel yesterday?',
+          answerFormat: ScaleAnswerFormat(
+            step: 1,
+            minimumValue: 1,
+            maximumValue: 5,
+            defaultValue: 3,
+            minimumValueDescription: '1',
+            maximumValueDescription: '5',
+          ),
+        ),
+        QuestionStep(
+          title: '\nLife Satisfaction\n',
+          text: 'How satisfied are you with your life?',
+          answerFormat: ScaleAnswerFormat(
+            step: 1,
+            minimumValue: 1,
+            maximumValue: 5,
+            defaultValue: 3,
+            minimumValueDescription: '1',
+            maximumValueDescription: '5',
+          ),
+        ),
+
+        QuestionStep(
+          title: '\nPsychological Well Being\n',
+          text: 'I lead a purposeful & meaningful life',
           isOptional: false,
           answerFormat: MultipleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: 'Penicillin', value: 'Penicillin'),
-              TextChoice(text: 'Latex', value: 'Latex'),
-              TextChoice(text: 'Pet', value: 'Pet'),
-              TextChoice(text: 'Pollen', value: 'Pollen'),
+              TextChoice(text: 'Strongly disagree', value: 'Strongly disagree'),
+              TextChoice(text: 'Disagree', value: 'Disagree'),
+              TextChoice(
+                  text: 'Neither Agree nor  Disagree',
+                  value: 'Neither Agree nor  Disagree'),
+              TextChoice(text: 'Agree', value: 'Agree'),
+              TextChoice(text: 'Strongly Agree', value: 'Strongly Agree'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '\nPsychological Well Being\n',
+          text: 'I am engaged and interested in my daily life',
+          isOptional: false,
+          answerFormat: MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Strongly disagree', value: 'Strongly disagree'),
+              TextChoice(text: 'Disagree', value: 'Disagree'),
+              TextChoice(
+                  text: 'Neither Agree nor  Disagree',
+                  value: 'Neither Agree nor  Disagree'),
+              TextChoice(text: 'Agree', value: 'Agree'),
+              TextChoice(text: 'Strongly Agree', value: 'Strongly Agree'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '\nPsychological Well Being\n',
+          text: 'I am optimistic about my life',
+          isOptional: false,
+          answerFormat: MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Strongly disagree', value: 'Strongly disagree'),
+              TextChoice(text: 'Disagree', value: 'Disagree'),
+              TextChoice(
+                  text: 'Neither Agree nor  Disagree',
+                  value: 'Neither Agree nor  Disagree'),
+              TextChoice(text: 'Agree', value: 'Agree'),
+              TextChoice(text: 'Strongly Agree', value: 'Strongly Agree'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '\nPsychological Well Being\n',
+          text:
+              'Most days I feel a sense of accomplishment from my daily activities',
+          isOptional: false,
+          answerFormat: MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Strongly disagree', value: 'Strongly disagree'),
+              TextChoice(text: 'Disagree', value: 'Disagree'),
+              TextChoice(
+                  text: 'Neither Agree nor  Disagree',
+                  value: 'Neither Agree nor  Disagree'),
+              TextChoice(text: 'Agree', value: 'Agree'),
+              TextChoice(text: 'Strongly Agree', value: 'Strongly Agree'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '\nPsychological Well Being\n',
+          text: 'In general, I feel very optimistic about myself',
+          isOptional: false,
+          answerFormat: MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Strongly disagree', value: 'Strongly disagree'),
+              TextChoice(text: 'Disagree', value: 'Disagree'),
+              TextChoice(
+                  text: 'Neither Agree nor  Disagree',
+                  value: 'Neither Agree nor  Disagree'),
+              TextChoice(text: 'Agree', value: 'Agree'),
+              TextChoice(text: 'Strongly Agree', value: 'Strongly Agree'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '\nPsychological Well Being\n',
+          text: 'I lead a purposeful & meaningful life',
+          isOptional: false,
+          answerFormat: MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Strongly disagree', value: 'Strongly disagree'),
+              TextChoice(text: 'Disagree', value: 'Disagree'),
+              TextChoice(
+                  text: 'Neither Agree nor  Disagree',
+                  value: 'Neither Agree nor  Disagree'),
+              TextChoice(text: 'Agree', value: 'Agree'),
+              TextChoice(text: 'Strongly Agree', value: 'Strongly Agree'),
             ],
           ),
         ),
@@ -227,7 +340,8 @@ class _MySurveyFormState extends State<MySurveyForm> {
           ),
         ),
         QuestionStep(
-          title: 'When did you wake up?',
+          title: '\nHealth\n',
+          text: 'When did you wake up?',
           answerFormat: TimeAnswerFormat(
             defaultValue: TimeOfDay(
               hour: 12,
@@ -236,11 +350,56 @@ class _MySurveyFormState extends State<MySurveyForm> {
           ),
         ),
         QuestionStep(
+          title: '\nHealth\n',
+          text: 'How is your health?',
+          isOptional: false,
+          answerFormat: MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Poor', value: 'Poor'),
+              TextChoice(text: 'Fair', value: 'Fair'),
+              TextChoice(text: 'Good', value: 'Good'),
+              TextChoice(text: 'Very Good', value: 'Very Good'),
+              TextChoice(text: 'Excellent', value: 'Excellent'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '\nHealth\n',
+          text:
+              'Please indicate how much of the time you had a lot of energy during the past week?',
+          isOptional: false,
+          answerFormat: MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Very rarely', value: 'Very rarely'),
+              TextChoice(text: 'Rarely', value: 'Rarely'),
+              TextChoice(text: 'Sometimes', value: 'Sometimes'),
+              TextChoice(text: 'Often', value: 'Often'),
+              TextChoice(text: 'Very Often', value: 'Very Often'),
+              TextChoice(text: 'Always', value: 'Always'),
+            ],
+          ),
+        ),
+        QuestionStep(
           title: 'When was your last holiday?',
           answerFormat: DateAnswerFormat(
             minDate: DateTime.utc(1970),
             defaultDate: DateTime.now(),
             maxDate: DateTime.now(),
+          ),
+        ),
+        QuestionStep(
+          title: '\nPlease rate your level of satisfaction\n',
+          text:
+              'How satisfied were you with your ability to perform to perform daily living activities?',
+          isOptional: false,
+          answerFormat: MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Very dissatisfied', value: 'Very dissatisfied'),
+              TextChoice(text: 'Dissatisfied', value: 'Dissatisfied'),
+              TextChoice(text: 'Neither', value: 'Neither'),
+              TextChoice(text: 'Satisfied', value: 'Satisfied'),
+              TextChoice(text: 'Very Satisfied', value: 'Very Satisfied'),
+            ],
           ),
         ),
         CompletionStep(

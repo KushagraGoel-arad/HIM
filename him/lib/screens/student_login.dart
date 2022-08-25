@@ -32,9 +32,8 @@ class _LoginPageState extends State<LoginPage> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
+      body: SingleChildScrollView(
+        child: Column(children: [
           Container(
             width: w,
             height: h * 0.4,
@@ -197,27 +196,29 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           SizedBox(
-            height: w * 0.05,
+            height: w * 0.01,
           ),
           RichText(
             text: TextSpan(
-                text: "Don\'t have an account?",
-                style: TextStyle(
-                  color: Colors.grey[500],
-                  fontSize: 20,
-                ),
-                children: [
-                  TextSpan(
-                    text: "Create",
-                    style: TextStyle(
-                      color: Colors.black87,
-                      fontSize: 20,
-                    ),
-                  ),
-                ]),
+              text: "Don\'t have an account?",
+              style: TextStyle(
+                color: Colors.grey[500],
+                fontSize: 12,
+              ),
+            ),
           ),
-        ],
+          Row(
+            children: [
+              new InkWell(
+                  child: new Text('Create'),
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.signUpRoute);
+                    print("Going to Sign Up page");
+                  }),
+            ],
+          )
+        ]),
       ),
-    ));
+    );
   }
 }
