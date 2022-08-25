@@ -3,7 +3,6 @@ import 'package:him/utilities/routes.dart';
 import 'package:him/screens/student_login.dart';
 import 'package:him/screens/teacher_login.dart';
 
-
 class signUp extends StatelessWidget {
   const signUp({Key? key}) : super(key: key);
 
@@ -21,7 +20,10 @@ class signUp extends StatelessWidget {
               padding: EdgeInsets.only(),
               child: Text(
                 'Create Account',
-                style: TextStyle(color: Colors.black,fontSize: 30,),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                ),
               ),
             ),
             SizedBox(
@@ -33,20 +35,21 @@ class signUp extends StatelessWidget {
                 children: [
                   Text(
                     'Already a member?',
-                    style: TextStyle(color: Colors.black,fontSize: 10),
+                    style: TextStyle(color: Colors.black, fontSize: 10),
                   ),
                   SizedBox(
                     width: 5,
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MyRoutes.student_loginRoute);
-                    },
+                    // onTap: () {
+                    //   Navigator.push(
+                    //     context,
+                    //     MyRoutes.student_loginRoute,
+                    //   );
+                    // },
                     child: Text(
                       'Log In',
-                      style: textButton.copyWith(
+                      style: TextStyle(
                         decoration: TextDecoration.underline,
                         decorationThickness: 1,
                       ),
@@ -67,38 +70,39 @@ class signUp extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(),
-              child: CheckBox('Agree to terms and conditions.'),
             ),
             SizedBox(
               height: 20,
             ),
             Padding(
-              padding: kDefaultPadding,
-              child: CheckBox('I have at least 18 years old.'),
+              padding: EdgeInsets.only(),
             ),
             SizedBox(
               height: 20,
             ),
             Padding(
-              padding: kDefaultPadding,
-              child: PrimaryButton(buttonText: 'Sign Up'),
+              padding: EdgeInsets.only(),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text("Sign Up"),
             ),
             SizedBox(
               height: 20,
             ),
             Padding(
-              padding: kDefaultPadding,
+              padding: EdgeInsets.only(),
               child: Text(
                 'Or log in with:',
-                style: subTitle.copyWith(color: kBlackColor),
+                style: TextStyle(color: Colors.black),
               ),
             ),
             SizedBox(
               height: 20,
             ),
             Padding(
-              padding: kDefaultPadding,
-              child: LoginOption(),
+              padding: EdgeInsets.only(),
+              child: LoginPage(),
             ),
             SizedBox(
               height: 20,
