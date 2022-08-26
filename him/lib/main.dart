@@ -22,15 +22,17 @@ class MyApp extends StatelessWidget {
       title: 'Happiness Index Meter',
       theme: ThemeData(primarySwatch: Colors.blue),
       //home: MyBottomNavigationBar(),
-      home: MySurveyForm(),
+      //home: MySurveyForm(),
       // Teacher_LoginPage(),
-      // initialRoute: '/student_login',
-      // routes: {
-      //   '/': (context) => LoginPage(),
-      //   MyRoutes.student_loginRoute: (context) => LoginPage(),
-      //   MyRoutes.Teacher_loginRoute: (context) => Teacher_LoginPage(),
-      //   MyRoutes.signUpRoute: (context) => signUp(),
-      // },
+      initialRoute: '/student_login',
+      routes: {
+        '/': (context) => LoginPage(),
+        MyRoutes.student_loginRoute: (context) => LoginPage(),
+        MyRoutes.Teacher_loginRoute: (context) => Teacher_LoginPage(),
+        MyRoutes.signUpRoute: (context) => signUp(),
+        MyRoutes.surveyRoute: (context) => MySurveyForm(),
+        MyRoutes.homeRoute: (context) => MyHomePage(),
+      },
     );
   }
 }

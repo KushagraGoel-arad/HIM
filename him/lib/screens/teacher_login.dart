@@ -185,7 +185,7 @@ class _Teacher_LoginPageState extends State<Teacher_LoginPage> {
                 'Login',
               ),
               onPressed: () {
-                // Navigator.pushNamed(context, MyRoutes.student_loginRoute);
+                Navigator.pushNamed(context, MyRoutes.homeRoute);
                 print("Hi User");
               },
               style: ElevatedButton.styleFrom(

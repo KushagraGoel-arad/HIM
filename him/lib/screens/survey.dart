@@ -327,6 +327,7 @@ class _MySurveyFormState extends State<MySurveyForm> {
             ],
           ),
         ),
+
         QuestionStep(
           title: 'Done?',
           text: 'We are done, do you mind to tell us more about yourself?',
@@ -411,14 +412,14 @@ class _MySurveyFormState extends State<MySurveyForm> {
       ],
     );
     task.addNavigationRule(
-      forTriggerStepIdentifier: task.steps[6].stepIdentifier,
+      forTriggerStepIdentifier: task.steps[18].stepIdentifier,
       navigationRule: ConditionalNavigationRule(
         resultToStepIdentifierMapper: (input) {
           switch (input) {
             case "Yes":
               return task.steps[0].stepIdentifier;
             case "No":
-              return task.steps[7].stepIdentifier;
+              return task.steps[18].stepIdentifier;
             default:
               return null;
           }
@@ -429,7 +430,7 @@ class _MySurveyFormState extends State<MySurveyForm> {
   }
 
   Future<Task> getJsonTask() async {
-    final taskJson = await rootBundle.loadString('assets/example_json.json');
+    final taskJson = await rootBundle.loadString('assets/Example_json.json');
     final taskMap = json.decode(taskJson);
 
     return Task.fromJson(taskMap);

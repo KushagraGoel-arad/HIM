@@ -87,6 +87,10 @@ class _LoginPageState extends State<LoginPage> {
                   child: TextFormField(
                     decoration: InputDecoration(
                       hintText: 'Username',
+                      prefixIcon: Icon(
+                        Icons.email_outlined,
+                        color: Colors.deepOrange,
+                      ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white, width: 1.0),
                         borderRadius: BorderRadius.circular(30),
@@ -131,6 +135,10 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Password',
+                      prefixIcon: Icon(
+                        Icons.password_outlined,
+                        color: Colors.deepOrange,
+                      ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white, width: 1.0),
                         borderRadius: BorderRadius.circular(30),
@@ -161,11 +169,11 @@ class _LoginPageState extends State<LoginPage> {
                     Expanded(
                       child: Container(),
                     ),
-                    Text(
-                      "Forget Password",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey[500],
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Forgot Password',
+                        style: TextStyle(color: Colors.blue, fontSize: 15),
                       ),
                     ),
                   ],
@@ -184,7 +192,7 @@ class _LoginPageState extends State<LoginPage> {
                 'Login',
               ),
               onPressed: () {
-                Navigator.pushNamed(context, MyRoutes.Teacher_loginRoute);
+                Navigator.pushNamed(context, MyRoutes.homeRoute);
                 print("Hi User");
               },
               style: ElevatedButton.styleFrom(
@@ -209,12 +217,13 @@ class _LoginPageState extends State<LoginPage> {
           ),
           Row(
             children: [
-              new InkWell(
-                  child: new Text('Create'),
-                  onTap: () {
-                    Navigator.pushNamed(context, MyRoutes.signUpRoute);
-                    print("Going to Sign Up page");
-                  }),
+              new TextButton(
+                child: new Text('Create'),
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.signUpRoute);
+                  print("Going to Sign Up page");
+                },
+              ),
             ],
           )
         ]),
