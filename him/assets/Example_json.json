@@ -104,7 +104,11 @@
         "answerFormat": {
           "type": "multiple",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Strongly disagree", "value": "Strongly disagree"},
+            {"text": "Disagree", "value": "Disagree"},
+            {"text": "Neither Agree nor  Disagree", "value": "Neither Agree nor  Disagree"},
+            {"text": "Agree", "value": "Agree"},
+            {"text": "Strongly Agree", "value": "Strongly Agree"}
           ]
         }
       },
@@ -116,7 +120,11 @@
         "answerFormat": {
           "type": "multiple",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Strongly disagree", "value": "Strongly disagree"},
+            {"text": "Disagree", "value": "Disagree"},
+            {"text": "Neither Agree nor  Disagree", "value": "Neither Agree nor  Disagree"},
+            {"text": "Agree", "value": "Agree"},
+            {"text": "Strongly Agree", "value": "Strongly Agree"}
           ]
         }
       },
@@ -128,7 +136,11 @@
         "answerFormat": {
           "type": "multiple",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Strongly disagree", "value": "Strongly disagree"},
+            {"text": "Disagree", "value": "Disagree"},
+            {"text": "Neither Agree nor  Disagree", "value": "Neither Agree nor  Disagree"},
+            {"text": "Agree", "value": "Agree"},
+            {"text": "Strongly Agree", "value": "Strongly Agree"}
           ]
         }
       },
@@ -141,7 +153,11 @@
         "answerFormat": {
           "type": "multiple",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Strongly disagree", "value": "Strongly disagree"},
+            {"text": "Disagree", "value": "Disagree"},
+            {"text": "Neither Agree nor  Disagree", "value": "Neither Agree nor  Disagree"},
+            {"text": "Agree", "value": "Agree"},
+            {"text": "Strongly Agree", "value": "Strongly Agree"}
           ]
         }
       },
@@ -153,7 +169,11 @@
         "answerFormat": {
           "type": "multiple",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Strongly disagree", "value": "Strongly disagree"},
+            {"text": "Disagree", "value": "Disagree"},
+            {"text": "Neither Agree nor  Disagree", "value": "Neither Agree nor  Disagree"},
+            {"text": "Agree", "value": "Agree"},
+            {"text": "Strongly Agree", "value": "Strongly Agree"}
           ]
         }
       },
@@ -165,7 +185,11 @@
         "answerFormat": {
           "type": "multiple",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Strongly disagree", "value": "Strongly disagree"},
+            {"text": "Disagree", "value": "Disagree"},
+            {"text": "Neither Agree nor  Disagree", "value": "Neither Agree nor  Disagree"},
+            {"text": "Agree", "value": "Agree"},
+            {"text": "Strongly Agree", "value": "Strongly Agree"}
           ]
         }
       },
@@ -180,7 +204,8 @@
           "negativeAnswer": "No",
           "result": "POSITIVE",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Yes", "value": "Yes"},
+            {"text": "No", "value": "No"}
           ]
         }
       },
@@ -205,7 +230,11 @@
         "answerFormat": {
           "type": "multiple",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Poor", "value": "Poor"},
+            {"text": "Fair", "value": "Fair"},
+            {"text": "Good", "value": "Good"},
+            {"text": "Very Good", "value": "Very Good"},
+            {"text": "Excellent", "value": "Excellent"}
           ]
         }
       },
@@ -218,7 +247,12 @@
         "answerFormat": {
           "type": "multiple",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Very rarely", "value": "Very rarely"},
+            {"text": "Rarely", "value": "Rarely"},
+            {"text": "Sometimes", "value": "Sometimes"},
+            {"text": "Often", "value": "Often"},
+            {"text": "Very Often", "value": "Very Often"},
+            {"text": "Always", "value": "Always"}
           ]
         }
       },
@@ -240,7 +274,11 @@
         "answerFormat": {
           "type": "multiple",
           "textChoices": [
-            {"text": "", "value": ""}
+            {"text": "Very dissatisfied", "value": "Very dissatisfied"},
+            {"text": "Dissatisfied", "value": "Dissatisfied"},
+            {"text": "Neither", "value": "Neither"},
+            {"text": "Satisfied", "value": "Satisfied"},
+            {"text": "Very Satisfied", "value": "Very Satisfied"}
           ]
         }
       },

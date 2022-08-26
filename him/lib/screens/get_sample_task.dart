@@ -190,7 +190,7 @@ Future<Task> getSampleTask() {
         answerFormat: TimeAnswerFormat(
           defaultValue: TimeOfDay(
             hour: 12,
-            minute: 0,
+            minute: 12,
           ),
         ),
       ),
@@ -263,7 +263,7 @@ Future<Task> getSampleTask() {
           case "Yes":
             return task.steps[0].stepIdentifier;
           case "No":
-            return task.steps[18].stepIdentifier;
+            return task.steps[20].stepIdentifier;
           default:
             return null;
         }
