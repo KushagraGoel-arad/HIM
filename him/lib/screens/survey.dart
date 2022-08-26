@@ -15,27 +15,22 @@ class MySurveyForm extends StatefulWidget {
 class _MySurveyFormState extends State<MySurveyForm> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          color: Colors.white,
-          child: Align(
-            alignment: Alignment.center,
-            child: FutureBuilder<Task>(
-              future: getJsonTask(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done &&
-                    snapshot.hasData &&
-                    snapshot.data != null) {
-                  final task = snapshot.data!;
-                  return _buildSurvey(task);
-                  // return Container(
-                  //   color: Colors.blue,
-                  // );
-                }
-                return const CircularProgressIndicator.adaptive();
-              },
-            ),
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: Align(
+          alignment: Alignment.center,
+          child: FutureBuilder<Task>(
+            future: getJsonTask(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.hasData &&
+                  snapshot.data != null) {
+                final task = snapshot.data!;
+                return _buildSurvey(task);
+              }
+              return const CircularProgressIndicator.adaptive();
+            },
           ),
         ),
       ),
@@ -43,22 +38,20 @@ class _MySurveyFormState extends State<MySurveyForm> {
   }
 
   Widget _buildSurvey(Task task) {
-    return Scaffold(
-      body: SurveyKit(
-        onResult: (SurveyResult result) {
-          print(result.finishReason);
-          Navigator.pushNamed(context, '/');
-        },
-        task: task,
-        // showProgress: true,
-        localizations: const {
-          'cancel': 'Cancel',
-          'next': 'Next',
-        },
-        themeData: _getThemeData(),
-        // surveyProgressbarConfiguration: SurveyProgressConfiguration(
-        //   backgroundColor: Colors.white,
-        // ),
+    return SurveyKit(
+      onResult: (SurveyResult result) {
+        print(result.finishReason);
+        Navigator.pushNamed(context, '/');
+      },
+      task: task,
+      showProgress: true,
+      localizations: const {
+        'cancel': 'Cancel',
+        'next': 'Next',
+      },
+      themeData: _getThemeData(),
+      surveyProgressbarConfiguration: SurveyProgressConfiguration(
+        backgroundColor: Colors.white,
       ),
     );
   }
@@ -389,7 +382,7 @@ const task_3 = {
       }
     },
     {
-      "stepIdentifier": {"id": "16"},
+      "stepIdentifier": {"id": "17"},
       "type": "question",
       "title": "\nHealth\n",
       "text":
@@ -402,7 +395,7 @@ const task_3 = {
       }
     },
     {
-      "stepIdentifier": {"id": "17"},
+      "stepIdentifier": {"id": "18"},
       "type": "question",
       "title": "When was your last holiday?",
       "answerFormat": {
@@ -411,7 +404,7 @@ const task_3 = {
       }
     },
     {
-      "stepIdentifier": {"id": "18"},
+      "stepIdentifier": {"id": "19"},
       "type": "question",
       "title": "\nPlease rate your level of satisfaction\n",
       "text":
@@ -424,7 +417,7 @@ const task_3 = {
       }
     },
     {
-      "stepIdentifier": {"id": "19"},
+      "stepIdentifier": {"id": "20"},
       "type": "completion",
       "text": "Thanks for taking the survey, we will contact you soon!",
       "title": "Done!",

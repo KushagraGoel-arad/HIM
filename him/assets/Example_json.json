@@ -210,7 +210,7 @@
         }
       },
       {
-        "stepIdentifier": {"id": "16"},
+        "stepIdentifier": {"id": "17"},
         "type": "question",
         "title": "\nHealth\n",
         "text":
@@ -223,7 +223,7 @@
         }
       },
       {
-        "stepIdentifier": {"id": "17"},
+        "stepIdentifier": {"id": "18"},
         "type": "question",
         "title": "When was your last holiday?",
         "answerFormat": {
@@ -232,7 +232,7 @@
         }
       },
       {
-        "stepIdentifier": {"id": "18"},
+        "stepIdentifier": {"id": "19"},
         "type": "question",
         "title": "\nPlease rate your level of satisfaction\n",
         "text":
@@ -245,7 +245,7 @@
         }
       },
       {
-        "stepIdentifier": {"id": "19"},
+        "stepIdentifier": {"id": "20"},
         "type": "completion",
         "text": "Thanks for taking the survey, we will contact you soon!",
         "title": "Done!",
